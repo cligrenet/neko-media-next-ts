@@ -34,3 +34,4 @@ Next on `http://localhost:3000`
 -   axios
 -   [zustand](https://www.npmjs.com/package/zustand): A small, fast and scalable state-management solution
 -   [uuid](https://www.npmjs.com/package/uuidv4)
+-   [Tailwind](https://tailwindcss.com/)
