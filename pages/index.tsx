@@ -24,12 +24,17 @@ const Home = ({ videos }: IProps) => {
 };
 
 // Fetch data at page loading
-export const getServerSideProps = async () => {
-	const response = await axios.get(`${BASE_URL}/api/post`);
+export const getServerSideProps = async ({ query: { topic } }: { query: { topic: string } }) => {
+	let res = null;
+	if (topic) {
+		res = await axios.get(`${BASE_URL}/api/discover/${topic}`);
+	} else {
+		res = await axios.get(`${BASE_URL}/api/post`);
+	}
 
 	return {
 		props: {
-			videos: response.data,
+			videos: res.data,
 		},
 	};
 };
